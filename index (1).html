@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doom India | Phones, TVs, Appliances</title>
+<meta name="description" content="Phones, wearables, TVs, appliances and more, forged in Latveria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0b0d0c; --steel:#151a18; --plate:#1f2623; --line:#2c3531;
+  --cloak:#2e4a3b; --verdigris:#7fa68d; --metal:#a9b2ae; --bone:#e6e9e4; --gold:#b9974a;
+  --head:'Cinzel','Trajan Pro',Georgia,serif; --body:'Barlow','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--bone);font-family:var(--body);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(11,13,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:32px;height:64px}
+.logo{font-family:var(--head);font-weight:700;font-size:22px;letter-spacing:.28em}
+nav{display:flex;gap:26px;flex:1;font-size:15px;color:var(--metal)}
+nav a{padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--bone);border-color:var(--gold)}
+.tools{display:flex;gap:20px;font-size:14px;color:var(--metal)}
+.tools a:hover{color:var(--bone)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--bone);padding:6px 12px;font:inherit;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;min-height:calc(100vh - 64px);display:grid;align-items:center;overflow:hidden;
+  background:radial-gradient(ellipse 60% 70% at 72% 45%,rgba(46,74,59,.55),transparent 70%),var(--void)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;width:100%}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(40px,6.2vw,84px);line-height:1.04;letter-spacing:.02em}
+.hero p{margin:22px 0 34px;color:var(--metal);font-size:19px;max-width:30ch}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 30px;border:1px solid var(--verdigris);font-size:15px;font-weight:500;transition:background .2s,color .2s}
+.btn.solid{background:var(--verdigris);color:var(--void)}
+.btn:hover{background:var(--bone);border-color:var(--bone);color:var(--void)}
+.mask{width:min(420px,80%);justify-self:center;filter:drop-shadow(0 0 60px rgba(127,166,141,.25))}
+.eyes{animation:ignite 3.2s ease-out 1 both}
+@keyframes ignite{0%,35%{opacity:0}60%{opacity:1}}
+.deal{position:absolute;bottom:28px;left:0;right:0;color:var(--metal);font-size:14px}
+.deal .wrap{display:block}
+.deal b{color:var(--gold);font-weight:500}
+
+/* Rows */
+section.row{padding:96px 0 24px}
+.row h2{font-family:var(--head);font-weight:500;font-size:clamp(28px,3.4vw,44px);letter-spacing:.03em}
+.row .sub{color:var(--metal);margin:8px 0 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.row .sub a{border-bottom:1px solid var(--line)}
+.row .sub a:hover{border-color:var(--gold);color:var(--bone)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--steel);border:1px solid var(--line);padding:26px 24px 24px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:border-color .25s,background .25s}
+.tile:hover{border-color:var(--verdigris);background:var(--plate)}
+.tile svg{width:72px;height:72px;stroke:var(--verdigris);fill:none;stroke-width:1.2}
+.tile h3{font-family:var(--head);font-weight:500;font-size:19px;margin-bottom:4px}
+.tile p{color:var(--metal);font-size:14.5px}
+.tile .buy{margin-top:18px;font-size:14px;font-weight:500;color:var(--gold);align-self:flex-start;border-bottom:1px solid transparent}
+.tile .buy:hover{border-color:var(--gold)}
+
+/* Stories */
+.stories{padding:96px 0 40px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 34px}
+.chip{border:1px solid var(--line);background:none;color:var(--metal);padding:9px 22px;font:inherit;font-size:14px;cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--bone);border-color:var(--metal)}
+.chip[aria-pressed="true"]{background:var(--cloak);color:var(--bone);border-color:var(--cloak)}
+.story{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--steel)}
+.story .art{min-height:280px;background:radial-gradient(circle at 30% 60%,var(--cloak),var(--void) 75%);display:grid;place-items:center;font-family:var(--head);font-size:clamp(48px,7vw,96px);color:rgba(230,233,228,.12);letter-spacing:.1em}
+.story .txt{padding:44px}
+.story h3{font-family:var(--head);font-weight:500;font-size:28px;margin-bottom:12px}
+.story p{color:var(--metal);max-width:44ch;margin-bottom:24px}
+
+/* Footer */
+footer{margin-top:96px;border-top:1px solid var(--line);background:var(--steel);padding:56px 0 32px;font-size:14.5px}
+.cols{display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+footer h4{font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:.08em;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:8px;color:var(--metal)}
+footer li a:hover{color:var(--bone)}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--metal);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px}
+
+@media(max-width:960px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .cols{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap,.story{grid-template-columns:1fr}
+  .mask{order:-1;width:min(260px,60%)}
+  .hero{min-height:auto;padding:48px 0 96px}
+}
+@media(max-width:760px){
+  nav,.tools{display:none}
+  .menu{display:block;margin-left:auto}
+  header.open nav{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--void);padding:12px 24px 20px;border-bottom:1px solid var(--line)}
+}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.tile{min-height:240px}.story .txt{padding:28px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="Doom India home">DOOM</a>
+    <nav aria-label="Main">
+      <a href="#phones">Phones &amp; Tablets</a>
+      <a href="#screens">TV &amp; AV</a>
+      <a href="#home">Appliances</a>
+      <a href="#stories">Stories</a>
+      <a href="#support">Support</a>
+    </nav>
+    <div class="tools"><a href="#">Search</a><a href="#">Cart</a><a href="#">Log in</a></div>
+    <button class="menu" aria-expanded="false" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Bow to the<br>premium upgrade.</h1>
+        <p>Phones, screens and machines for the home of a ruler.</p>
+        <div class="btns">
+          <a class="btn solid" href="#phones">Buy now</a>
+          <a class="btn" href="#stories">Learn more</a>
+        </div>
+      </div>
+      <svg class="mask" viewBox="0 0 300 360" role="img" aria-label="Iron mask inside a dark hood">
+        <path d="M150 12C78 12 34 62 30 140c-3 60 8 130 0 220h240c-8-90 3-160 0-220C266 62 222 12 150 12Z" fill="#12261c" stroke="#2e4a3b" stroke-width="2"/>
+        <path d="M150 68c-44 0-72 30-72 74v54c0 38 26 66 72 96 46-30 72-58 72-96v-54c0-44-28-74-72-74Z" fill="#a9b2ae"/>
+        <path d="M150 68c-44 0-72 30-72 74v54c0 38 26 66 72 96V68Z" fill="#8f9995"/>
+        <path d="M150 170v50M132 252h36" stroke="#4d5753" stroke-width="3" stroke-linecap="round"/>
+        <g class="eyes"><path d="M100 150l36 6-4 12-34-4Z" fill="#0b0d0c"/><path d="M200 150l-36 6 4 12 34-4Z" fill="#0b0d0c"/>
+        <path d="M104 156l28 4M196 156l-28 4" stroke="#7fa68d" stroke-width="3" stroke-linecap="round"/></g>
+        <circle cx="96" cy="112" r="3" fill="#b9974a"/><circle cx="204" cy="112" r="3" fill="#b9974a"/>
+      </svg>
+    </div>
+    <div class="deal"><div class="wrap"><b>Black Friday.</b> Offers on phones, TVs and appliances until the end of November.</div></div>
+  </section>
+
+  <section class="row" id="phones"><div class="wrap">
+    <h2>Command your everyday</h2>
+    <div class="sub"><span>Find the device that fits your reign.</span><a href="#">View all phones &amp; tablets</a></div>
+    <div class="grid">
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="22" y="8" width="28" height="56" rx="4"/><path d="M30 14h12"/></svg><div><h3>Doom Fold</h3><p>Two screens. One decree.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="22" y="8" width="28" height="56" rx="4"/><path d="M22 36h28"/></svg><div><h3>Doom Flip</h3><p>Compact, and still absolute.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="8" y="16" width="56" height="40" rx="4"/><circle cx="60" cy="36" r="1.5"/></svg><div><h3>Doom Tab Ultra</h3><p>A large canvas for large plans.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="14"/><path d="M28 22l2-12h12l2 12M28 50l2 12h12l2-12"/></svg><div><h3>Doom Watch</h3><p>Keep time. Keep control.</p></div><a class="buy" href="#">Buy</a></article>
+    </div>
+  </div></section>
+
+  <section class="row" id="screens"><div class="wrap">
+    <h2>Rule your screen</h2>
+    <div class="sub"><span>See more in every moment.</span><a href="#">View all TVs &amp; AV</a></div>
+    <div class="grid">
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="6" y="14" width="60" height="38" rx="2"/><path d="M26 62h20M36 52v10"/></svg><div><h3>Micro RGB TV</h3><p>Colour with iron discipline.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="8" y="12" width="56" height="42" rx="1"/><rect x="14" y="18" width="44" height="30"/></svg><div><h3>The Frame</h3><p>A throne room needs a portrait.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="6" y="28" width="60" height="16" rx="3"/><circle cx="18" cy="36" r="3"/><circle cx="54" cy="36" r="3"/></svg><div><h3>Q Soundbar</h3><p>Sound that fills the keep.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><path d="M10 16h52v32H10zM26 60h20M36 48v12"/><path d="M10 40q26-14 52 0"/></svg><div><h3>Odyssey OLED</h3><p>240Hz. No mercy for lag.</p></div><a class="buy" href="#">Buy</a></article>
+    </div>
+  </div></section>
+
+  <section class="row" id="home"><div class="wrap">
+    <h2>Fortify your home</h2>
+    <div class="sub"><span>The whole castle gets smarter.</span><a href="#">View all appliances</a></div>
+    <div class="grid">
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="20" y="6" width="32" height="60" rx="3"/><path d="M20 28h32M26 14v6M26 34v10"/></svg><div><h3>AI Refrigerator</h3><p>Cold, calculated, efficient.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="12" y="8" width="48" height="56" rx="3"/><circle cx="36" cy="38" r="14"/><circle cx="36" cy="38" r="7"/></svg><div><h3>AI Washer Dryer</h3><p>Spotless on every command.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="8" y="14" width="56" height="22" rx="3"/><path d="M18 46q6 8 0 16M36 46q6 8 0 16M54 46q6 8 0 16"/></svg><div><h3>WindFree AC</h3><p>Cool air, no draft, no noise.</p></div><a class="buy" href="#">Buy</a></article>
+      <article class="tile"><svg viewBox="0 0 72 72"><rect x="8" y="18" width="56" height="36" rx="3"/><rect x="14" y="24" width="34" height="24"/><circle cx="56" cy="30" r="2"/></svg><div><h3>Convection Oven</h3><p>Heat on your terms.</p></div><a class="buy" href="#">Buy</a></article>
+    </div>
+  </div></section>
+
+  <section class="stories" id="stories"><div class="wrap">
+    <h2 style="font-family:var(--head);font-weight:500;font-size:clamp(28px,3.4vw,44px);letter-spacing:.03em">Explore the stories</h2>
+    <div class="chips" role="group" aria-label="Story topics">
+      <button class="chip" aria-pressed="true" data-i="0">Unpacked replay</button>
+      <button class="chip" aria-pressed="false" data-i="1">One UI</button>
+      <button class="chip" aria-pressed="false" data-i="2">Switch to Doom</button>
+      <button class="chip" aria-pressed="false" data-i="3">Buy direct, get more</button>
+    </div>
+    <div class="story" aria-live="polite">
+      <div class="art" id="sArt">DOOM</div>
+      <div class="txt"><h3 id="sTitle"></h3><p id="sText"></p><a class="btn" href="#">Learn more</a></div>
+    </div>
+  </div></section>
+</main>
+
+<footer id="support">
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Shop</h4><ul><li><a href="#">Shop home</a></li><li><a href="#">Buy direct, get more</a></li><li><a href="#">Care+</a></li><li><a href="#">Trade-in</a></li><li><a href="#">Students &amp; teachers</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="#phones">Smartphones</a></li><li><a href="#phones">Tablets</a></li><li><a href="#screens">TVs</a></li><li><a href="#home">Refrigerators</a></li><li><a href="#home">Air conditioners</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">Manuals &amp; software</a></li><li><a href="#">Service centre</a></li><li><a href="#">Book a repair</a></li><li><a href="#">Warranty</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+      <div><h4>Account</h4><ul><li><a href="#">Orders</a></li><li><a href="#">Rewards</a></li><li><a href="#">Vouchers</a></li><li><a href="#">Product registration</a></li></ul></div>
+      <div><h4>About us</h4><ul><li><a href="#">Company info</a></li><li><a href="#">Careers</a></li><li><a href="#">Newsroom</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Ethics</a></li></ul></div>
+    </div>
+    <div class="legal"><span>&copy; 2026 Doom Electronics. A fan-made concept; not affiliated with Samsung or Marvel.</span><span>Privacy &nbsp; Legal &nbsp; Sitemap &nbsp; India / English</span></div>
+  </div>
+</footer>
+
+<script>
+const data=[
+ ["Unpacked replay","Watch the launch again, from the first reveal to the final bow."],
+ ["One UI","One interface across every device you own. Learn what changed this year."],
+ ["Switch to Doom","Move your contacts, photos and apps in minutes. Nothing is left behind."],
+ ["Buy direct, get more","Order from our store and get extra trade-in value and free delivery."]
+];
+const chips=document.querySelectorAll('.chip'),t=document.getElementById('sTitle'),x=document.getElementById('sText'),a=document.getElementById('sArt');
+function show(i){chips.forEach((c,n)=>c.setAttribute('aria-pressed',n===i));t.textContent=data[i][0];x.textContent=data[i][1];a.textContent=data[i][0].split(' ')[0].toUpperCase()}
+chips.forEach(c=>c.addEventListener('click',()=>show(+c.dataset.i)));show(0);
+const h=document.querySelector('header'),m=document.querySelector('.menu');
+m.addEventListener('click',()=>{const o=h.classList.toggle('open');m.setAttribute('aria-expanded',o)});
+h.querySelectorAll('nav a').forEach(l=>l.addEventListener('click',()=>{h.classList.remove('open');m.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
